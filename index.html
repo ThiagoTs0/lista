@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Thiago T.">
+        <meta name="description" content="Lista de Compra">
+        <meta name="keywords" content="lista,front,end">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Crimson Text', serif;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            :root{
+                --cor1:#4d86d0;
+                --cor2:white;
+                --cor3:#979797;
+            }
+            html,body{
+                height: 100%;
+                overflow-x:hidden;
+            }
+            .header{
+                width: 100%;
+                height: 80px;
+                line-height: 70px;
+                text-align: center;
+                background-color:var(--cor1);
+                color: var(--cor2);
+            }
+            form{
+                width: 100%;
+                transform: translate(40px,0);
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+               
+            }
+            input[id="compra"]{
+                width: 80%;
+                height: 50px;
+                border-radius: 50px;
+                padding: 0 0 0 15px;
+                cursor:pointer;
+                border: 2px inset var(--cor3);
+                outline: none;
+
+            }
+            input[id="compra"]:focus{
+                border: 2px  outset var(--cor3);
+            }
+            input[id="submit"]{
+                transform: translate(-80px,0px);
+                cursor: pointer;
+                border: 0;
+                width: 80px;
+                border-radius: 50px;    
+                background-color:var(--cor1);
+                color: var(--cor2);
+
+            }
+
+            .main{
+                width: 70%;
+                margin: 30px auto;
+            }
+            .conteiner{
+                margin: 30px 0;
+                display: none;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                height: 100px;
+                background-color: var(--cor1);
+                border-radius: 5px;
+            }
+            span{
+                margin: 0 0 0 25px;
+                font-size:23px;
+                color: white;
+                font-weight: 700;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Lista De Compras</h1>
+        </div>
+        <form>
+            <input type="text" name="compra" id="compra" placeholder="Qual o Produto? ">
+            <input type="button" id="submit" name="enviar" value="Criar +">
+        </form>
+        <div class="main">
+            <div class="conteiner">
+                <span></span>
+            </div>
+            <div class="conteiner">
+                <span></span>
+            </div>
+            <div class="conteiner">
+                <span></span>
+            </div>
+            <div class="conteiner">
+                <span></span>
+            </div>
+            <div class="conteiner">
+                <span></span>
+            </div>
+            <div class="conteiner">
+                <span></span>
+            </div>
+            <div class="conteiner">
+                <span></span>
+            </div>
+            <div class="conteiner">
+                <span></span>
+            </div>
+            <div class="conteiner">
+                <span></span>
+            </div>
+            <div class="conteiner">
+                <span></span>
+            </div>
+        </div>
+        <script>
+            var lista = [];
+            var produto = document.getElementById("compra");
+            var butao = document.getElementById('submit');
+         
+            
+
+
+            var repeticao = ()=>{
+                a = 0;
+                while(a < lista.length){
+                    
+                        
+                    var res = document.querySelectorAll('span')[a].innerHTML = `${lista[a]}`;
+                    var vazio = document.getElementsByClassName("conteiner")[a];
+                    vazio.style.display = "flex";
+                    a++;
+
+                }
+            }
+
+            // function repete(){
+            //     for(a = lista.length;a > 0,a++){
+            //         lista.[0];
+            //     }
+            // }
+
+
+            butao.addEventListener("click", ()=>{
+                console.log(produto.value);
+                lista.push(produto.value);
+                console.log(lista);
+                
+                
+                
+                repeticao();
+                
+            })
+
+       </script>
+    </body>
+</html>
